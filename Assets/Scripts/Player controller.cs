@@ -25,12 +25,7 @@ public class Playercontroller : MonoBehaviour
 
     float xControls, yControls;
 
-
-    void Start()
-    {
-
-    }
-
+   
     void Update()
     {
         ProcessTranslate();
@@ -79,8 +74,6 @@ public class Playercontroller : MonoBehaviour
         foreach(GameObject items in lasers)
         {
             items.SetActive(isActive);
-            //var laserEmissions = items.GetComponent<ParticleSystem>().emission;
-            //laserEmissions.enabled = isActive;
         }
     }
 }

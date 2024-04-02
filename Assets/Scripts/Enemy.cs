@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    AudioSource enemyExplosionSFX;
     Rigidbody enemyRb;
     Scoreboard scoreBoard;
 
@@ -15,6 +16,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         scoreBoard = FindObjectOfType<Scoreboard>();
+        enemyExplosionSFX = GetComponent<AudioSource>();
         enemyRb = gameObject.AddComponent<Rigidbody>();
         enemyRb.useGravity = false;
     }
@@ -37,7 +39,6 @@ public class Enemy : MonoBehaviour
 
     private void EnemySmallHitting()
     {
-        //hitVFX.Play();
         Debug.Log($"EnemySmall HP is {enemyHealth}");
         if (enemyHealth > 0)
         {
@@ -82,9 +83,25 @@ public class Enemy : MonoBehaviour
 
     IEnumerator EnemyDestroy()
     {
-        enemyExplosion.Play();
-        yield return new WaitForSeconds(0.1f);
-        Destroy(gameObject);
-        scoreBoard.ScoreCalculation(enemyScore);
+        Collider[] colliders = GetComponentsInChildren<Collider>();
+        foreach (Collider collider in colliders)
+        {
+            collider.enabled = false;
+        }
+        if (gameObject.CompareTag("EnemySmall"))
+        {
+            enemyExplosion.Play();
+            yield return new WaitForSeconds(0.1f);
+            Destroy(gameObject);
+            scoreBoard.ScoreCalculation(enemyScore);
+        }
+        else if (gameObject.CompareTag("EnemyMedium") || gameObject.CompareTag("EnemyLarge"))
+        {
+            enemyExplosionSFX.Play();
+            enemyExplosion.Play();
+            yield return new WaitForSeconds(0.4f);
+            Destroy(gameObject);
+            scoreBoard.ScoreCalculation(enemyScore);
+        }
     }
 }

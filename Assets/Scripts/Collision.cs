@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,14 +6,23 @@ public class Collision : MonoBehaviour
 {
     [SerializeField] ParticleSystem explosionParticles;
     [SerializeField] GameObject body;
+
+    AudioSource explosionSFX;
+
+    private void Start()
+    {
+        explosionSFX = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
+        Debug.Log($"collided with {other.gameObject.name}");
         StartCoroutine(SceneReload());
     }
 
     IEnumerator SceneReload()
     {
+        explosionSFX.Play();
         explosionParticles.Play();
         body.SetActive(false);
         GetComponent<Playercontroller>().enabled = false;
