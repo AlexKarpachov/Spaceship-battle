@@ -6,6 +6,7 @@ public class Collision : MonoBehaviour
 {
     [SerializeField] ParticleSystem explosionParticles;
     [SerializeField] GameObject body;
+    [SerializeField] GameObject resetMenu;
 
     AudioSource explosionSFX;
 
@@ -16,8 +17,16 @@ public class Collision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"collided with {other.gameObject.name}");
-        StartCoroutine(SceneReload());
+        
+        if (!other.gameObject.CompareTag("FinalPoint"))
+        {
+            Debug.Log($"collided with {other.gameObject.name}");
+            StartCoroutine(SceneReload());
+        }
+        else if (other.gameObject.CompareTag("FinalPoint"))
+        {
+            StartCoroutine(NextSceneLoad());
+        }
     }
 
     IEnumerator SceneReload()
@@ -27,8 +36,24 @@ public class Collision : MonoBehaviour
         body.SetActive(false);
         GetComponent<Playercontroller>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
-        int opennedSceneIndex = SceneManager.GetActiveScene().buildIndex;
         yield return new WaitForSeconds(0.7f);
+        resetMenu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    IEnumerator NextSceneLoad()
+    {
+        GetComponent<Playercontroller>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void resetScene()
+    {
+        Time.timeScale = 1f;
+        resetMenu.SetActive(false);
+        int opennedSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(opennedSceneIndex);
     }
 }

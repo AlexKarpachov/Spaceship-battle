@@ -7,7 +7,7 @@ TagManager:
   - EnemySmall
   - EnemyMedium
   - EnemyLarge
-  - BasePlace
+  - FinalPoint
   layers:
   - Default
   - TransparentFX
