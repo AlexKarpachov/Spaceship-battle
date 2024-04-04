@@ -1966,11 +1966,16 @@ PlayableDirector:
     value: {fileID: 1147958389}
   m_ExposedReferences:
     m_References:
+    - 82a01639c8d7159428c04728f0abc2a0: {fileID: 1309639210}
+    - ba1ad2c26dfdc8148bf53002aa31b79f: {fileID: 1309639210}
     - 43cc0af87b3f4ca48adfc4c38539b5ea: {fileID: 1038311970}
     - 39f36cedb7f16584c9b6ba539ec7f2d7: {fileID: 1946892013}
     - f379d9ed23c25c745b2e61b653611658: {fileID: 1885337592}
+    - fe8d7485cf61f8241bd14fdfa99e117e: {fileID: 1309639210}
+    - 8b49ff0c5f815cb4d84adf5e047230f5: {fileID: 1309639210}
     - b7124748a90235547b5a01321e638130: {fileID: 431259083}
     - c7b4ed1e7a5039649ac530a3c41eb756: {fileID: 1002872121}
+    - a6a56489f245e5240b99a7c906561cd8: {fileID: 1309639210}
 --- !u!1001 &1309639208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1981,7 +1986,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 655250537814949432, guid: 9500617d513df97408882ecbe9c6783a, type: 3}
       propertyPath: m_Name
-      value: Admiral Zorg
+      value: Lt. Kickass
+      objectReference: {fileID: 0}
+    - target: {fileID: 655250537814949432, guid: 9500617d513df97408882ecbe9c6783a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4236988644950978075, guid: 9500617d513df97408882ecbe9c6783a, type: 3}
       propertyPath: m_Pivot.x
@@ -2075,6 +2084,11 @@ PrefabInstance:
 --- !u!224 &1309639209 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4236988644950978075, guid: 9500617d513df97408882ecbe9c6783a, type: 3}
+  m_PrefabInstance: {fileID: 1309639208}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1309639210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 655250537814949432, guid: 9500617d513df97408882ecbe9c6783a, type: 3}
   m_PrefabInstance: {fileID: 1309639208}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1357382713
