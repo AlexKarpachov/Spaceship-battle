@@ -356,6 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionParticles: {fileID: 817855720278661286}
   body: {fileID: 2321490741457378785}
+  resetMenu: {fileID: 0}
 --- !u!1001 &6498982055382650145
 PrefabInstance:
   m_ObjectHideFlags: 0

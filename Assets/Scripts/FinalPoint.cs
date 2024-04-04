@@ -11,7 +11,7 @@ public class FinalPoint : MonoBehaviour
 
     IEnumerator FinalPointPlace()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
         gameObject.GetComponent<BoxCollider>().enabled = true;
     }
 }

@@ -986,6 +986,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1693994261}
     - target: {fileID: 8665465073561744246, guid: c560da46d6d77e6408eec78c54c8f5fc, type: 3}
+      propertyPath: finalPoint
+      value: 
+      objectReference: {fileID: 404055478}
+    - target: {fileID: 8665465073561744246, guid: c560da46d6d77e6408eec78c54c8f5fc, type: 3}
       propertyPath: pauseButton
       value: 
       objectReference: {fileID: 906361445}
@@ -2432,113 +2436,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3640021732251091082, guid: 2ea0711f90a1b564b9e826aeef66318d, type: 3}
   m_PrefabInstance: {fileID: 8321527543310933651}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1746363175 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8596802498706717978, guid: 043694c9e938039488bbf020534e1b33, type: 3}
-  m_PrefabInstance: {fileID: 4733124467733360418}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1746363181
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746363175}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dc87d6ad2723b3c429d0c9f079f3aa7c, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &1746363182 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 628015478757371615, guid: 043694c9e938039488bbf020534e1b33, type: 3}
   m_PrefabInstance: {fileID: 4733124467733360418}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746363175}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1493c6b5d191d0640a6d5b1c77390fec, type: 3}
@@ -3340,10 +3243,6 @@ PrefabInstance:
       propertyPath: controlSpeed
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 8007037853718694866, guid: 043694c9e938039488bbf020534e1b33, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3351,9 +3250,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2003433189504257504, guid: 043694c9e938039488bbf020534e1b33, type: 3}
       insertIndex: -1
       addedObject: {fileID: 173667373}
-    - targetCorrespondingSourceObject: {fileID: 8596802498706717978, guid: 043694c9e938039488bbf020534e1b33, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1746363181}
   m_SourcePrefab: {fileID: 100100000, guid: 043694c9e938039488bbf020534e1b33, type: 3}
 --- !u!4 &5045114221207695278 stripped
 Transform:

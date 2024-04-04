@@ -8,6 +8,8 @@ TagManager:
   - EnemyMedium
   - EnemyLarge
   - FinalPoint
+  - Land
+  - FinalPoint Lvl2
   layers:
   - Default
   - TransparentFX

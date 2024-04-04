@@ -7,6 +7,7 @@ public class Collision : MonoBehaviour
     [SerializeField] ParticleSystem explosionParticles;
     [SerializeField] GameObject body;
     [SerializeField] GameObject resetMenu;
+    [SerializeField] GameObject endGame;
 
     AudioSource explosionSFX;
 
@@ -17,8 +18,8 @@ public class Collision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (!other.gameObject.CompareTag("FinalPoint"))
+
+        if (!other.gameObject.CompareTag("FinalPoint") && !other.gameObject.CompareTag("FinalPoint Lvl2"))
         {
             Debug.Log($"collided with {other.gameObject.name}");
             StartCoroutine(SceneReload());
@@ -26,6 +27,10 @@ public class Collision : MonoBehaviour
         else if (other.gameObject.CompareTag("FinalPoint"))
         {
             StartCoroutine(NextSceneLoad());
+        }
+        else if (other.gameObject.CompareTag("FinalPoint Lvl2"))
+        {
+            StartCoroutine(EndGameMethod());
         }
     }
 
@@ -47,6 +52,15 @@ public class Collision : MonoBehaviour
         GetComponent<BoxCollider>().enabled = false;
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    IEnumerator EndGameMethod()
+    {
+        GetComponent<Playercontroller>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        endGame.gameObject.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void resetScene()

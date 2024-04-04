@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -7,9 +8,14 @@ public class Options : MonoBehaviour
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject pauseButton;
+    [SerializeField] GameObject finalPoint;
 
     bool gameIsPaused = false;
 
+    private void Start()
+    {
+        StartCoroutine(FinalPointEnabled());
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -23,6 +29,11 @@ public class Options : MonoBehaviour
                 PauseGame();
             }
         }
+    }
+    IEnumerator FinalPointEnabled()
+    {
+        yield return new WaitForSeconds(1.0f);
+        finalPoint.gameObject.SetActive(true);
     }
     public void setVolume(float volume)
     {
