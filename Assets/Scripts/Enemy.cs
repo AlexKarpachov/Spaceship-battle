@@ -47,7 +47,6 @@ public class Enemy : MonoBehaviour
         if (enemyHealth < 1)
         {
             StartCoroutine(EnemyDestroy());
-            //scoreBoard.ScoreCalculation(enemyScore); --- Moved this line to the EnemyDestroy()
         }
     }
 
@@ -62,7 +61,6 @@ public class Enemy : MonoBehaviour
         if (enemyHealth < 1)
         {
             StartCoroutine(EnemyDestroy());
-            //scoreBoard.ScoreCalculation(enemyScore); --- Moved this line to the EnemyDestroy()
         }
     }
 
@@ -77,7 +75,6 @@ public class Enemy : MonoBehaviour
         if (enemyHealth < 1)
         {
             StartCoroutine(EnemyDestroy());
-            //scoreBoard.ScoreCalculation(enemyScore); --- Moved this line to the EnemyDestroy()
         }
     }
 
@@ -93,7 +90,7 @@ public class Enemy : MonoBehaviour
             enemyExplosion.Play();
             yield return new WaitForSeconds(0.1f);
             Destroy(gameObject);
-            scoreBoard.ScoreCalculation(enemyScore);
+            scoreBoard.AddScore(enemyScore);
         }
         else if (gameObject.CompareTag("EnemyMedium") || gameObject.CompareTag("EnemyLarge"))
         {
@@ -101,7 +98,7 @@ public class Enemy : MonoBehaviour
             enemyExplosion.Play();
             yield return new WaitForSeconds(0.4f);
             Destroy(gameObject);
-            scoreBoard.ScoreCalculation(enemyScore);
+            scoreBoard.AddScore(enemyScore);
         }
     }
 }

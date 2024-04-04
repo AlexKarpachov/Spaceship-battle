@@ -1,19 +1,45 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class Scoreboard : MonoBehaviour
 {
-    int score;
-    TextMeshProUGUI scoreText;
+    public static int ScoreValue { get; private set; }
+    public TextMeshProUGUI ScoreText;
 
     private void Start()
     {
-        scoreText = GetComponent<TextMeshProUGUI>();
-        scoreText.text = "Score: 0";
+        // Load the score from PlayerPrefs when the level starts
+        ScoreValue = PlayerPrefs.GetInt("PlayerScore", 0);
+        UpdateScoreText();
     }
-    public void ScoreCalculation(int addToScore)
+    public void AddScore(int score)
     {
-        score += addToScore;
-        scoreText.text = "Score: " + score.ToString();
+        // Add the enemy score to the total score
+        ScoreValue += score;
+        UpdateScoreText();
+        SaveScore();
+    }
+    public void ResetScore()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            ScoreValue = 0;
+            UpdateScoreText();
+            PlayerPrefs.SetInt("PlayerScore", ScoreValue);
+        }
+    }
+
+    private void UpdateScoreText()
+    {
+        ScoreText.text = "Score: " + ScoreValue;
+    }
+
+    private void SaveScore()
+    {
+        // Save the score to PlayerPrefs
+        PlayerPrefs.SetInt("PlayerScore", ScoreValue);
     }
 }

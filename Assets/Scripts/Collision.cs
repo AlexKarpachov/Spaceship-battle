@@ -41,6 +41,7 @@ public class Collision : MonoBehaviour
         body.SetActive(false);
         GetComponent<Playercontroller>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
+        FindObjectOfType<Scoreboard>().ResetScore(); // reset the score
         yield return new WaitForSeconds(0.7f);
         resetMenu.SetActive(true);
         Time.timeScale = 0f;
