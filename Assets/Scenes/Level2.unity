@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0060569057, g: 0.010868199, b: 0.007500067, a: 1}
+  m_IndirectSpecularColor: {r: 0.0059398212, g: 0.0107212225, b: 0.007435959, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1652,10 +1652,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 672585516}
-    - target: {fileID: 34548919278624965, guid: ebd2a65b2814e484e964b5c658dd9ee4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitGame
-      objectReference: {fileID: 0}
     - target: {fileID: 833364946424457865, guid: ebd2a65b2814e484e964b5c658dd9ee4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1744,10 +1740,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 672585516}
-    - target: {fileID: 3191144443447439101, guid: ebd2a65b2814e484e964b5c658dd9ee4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MainMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 5893832164584307600, guid: ebd2a65b2814e484e964b5c658dd9ee4, type: 3}
       propertyPath: m_Name
       value: ResetMenu
@@ -1756,10 +1748,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 441129933}
-    - target: {fileID: 7680147973360671992, guid: ebd2a65b2814e484e964b5c658dd9ee4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: resetScene
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2102,6 +2090,10 @@ PrefabInstance:
     - target: {fileID: 1585756005728209679, guid: 2ea0711f90a1b564b9e826aeef66318d, type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585756005728209679, guid: 2ea0711f90a1b564b9e826aeef66318d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3640021732251091082, guid: 2ea0711f90a1b564b9e826aeef66318d, type: 3}
       propertyPath: m_Pivot.x
